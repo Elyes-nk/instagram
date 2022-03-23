@@ -2,8 +2,15 @@
     <img height="250" src="https://www.themrphone.com/tech/wp-content/uploads/2019/07/Instagram-Dark-Mode-featured.jpg">
 </h1>
 
-# 📷: - Instagram-Clone Front
+# 📷  Instagram-Clone Front
 *Front end part of the best photo app in the world.*
+
+## Project content
+- Login
+- Home
+- Stories
+- Posts
+- Comments
 
 # Project structure
 
