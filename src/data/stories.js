@@ -8,15 +8,19 @@ export default [
     stories: [
       {
         image : require("../assets/images/433/s1.jpeg"),
-        postedTime: '2 m',
+        postedTime: '20 m',
       },
       {
-        image : require("../assets/images/433/s2.jpeg"),
-        postedTime: '10 m',
+        image : require("../assets/images/433/s5.jpeg"),
+        postedTime: '18 m',
       },
       {
         image : require("../assets/images/433/s3.jpeg"),
-        postedTime: '12 m',
+        postedTime: '10 m',
+      },
+      {
+        image : require("../assets/images/433/s2.jpeg"),
+        postedTime: '6 m',
       }
     ]
   },  {
@@ -44,11 +48,11 @@ export default [
       },
       {
         image : require("../assets/images/footy/s2.jpeg"),
-        postedTime: '25 m',
+        postedTime: '5 m',
       },
       {
         image : require("../assets/images/footy/s3.jpeg"),
-        postedTime: '20 m',
+        postedTime: '2 m',
       },
     ]
   }, {
