@@ -13,9 +13,7 @@ import {
 import ProfilePicture from '../ProfilePicture'
 import heart from '../../assets/images/icons/heart.png'
 import hearto from '../../assets/images/icons/hearto.png'
-
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
-
 
 const Comment = ({comment}) => {
 
@@ -33,7 +31,6 @@ const Comment = ({comment}) => {
     setLikesCount(comment?.likes)
   }, [])
   
-
   return (
     <Container>
       <ContainerTwo>

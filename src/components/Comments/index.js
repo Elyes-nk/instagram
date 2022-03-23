@@ -9,11 +9,7 @@ import postsData from '../../data/posts';
 const Comments = ({postId}) =>{
 
 const post = postsData.find(item => item.id === postId);
-const [comments, setComments] = useState(null);
-
-useEffect(() => {
-  setComments(post?.comments)
-}, [post]);
+const [comments, setComments] = useState(post?.comments);
 
 return(
     <View>

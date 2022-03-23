@@ -1,12 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {
-  Text,
   ActivityIndicator,
   TouchableWithoutFeedback,
   Dimensions,
   SafeAreaView
 } from 'react-native';
-import { useRoute, useNavigation } from '@react-navigation/native';
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import {
@@ -16,27 +14,25 @@ import {
     UserName, 
     PostedTime, 
     BottomContainer, 
-    CameraButton, 
     MessageButton, 
     TextInput, 
     TextInputContainer,
     IconsContainer,
   } from './styles';
-
-import storiesData from '../../data/stories';
+import { Context } from '../../context/Context'
 import ProfilePicture from "../../components/ProfilePicture";
 
 const StoryScreen = ({route}) => {
 
   const [activeStoryIndex, setActiveStoryIndex] = useState(0);
-
   const  { params : {userId} } = route;
+  const { stories } = useContext(Context);
 
-  //GET stories from selected user
-  const stories = storiesData.find(item => item.user.id === userId);
+  //GET UserStories from selected user
+  const UserStories = stories.find(item => item.user.id === userId);
 
   const handleNextStory = () => {
-    if (activeStoryIndex >= stories?.stories.length - 1) {
+    if (activeStoryIndex >= UserStories?.stories.length - 1) {
       return;
     }
     setActiveStoryIndex(activeStoryIndex + 1);
@@ -60,7 +56,7 @@ const StoryScreen = ({route}) => {
     }
   }
 
-  if (!stories || stories.length === 0) {
+  if (!UserStories || UserStories.length === 0) {
     return (
       <SafeAreaView>
         <ActivityIndicator />
@@ -68,7 +64,7 @@ const StoryScreen = ({route}) => {
     )
   }
 
-  const activeStory = stories.stories[activeStoryIndex];
+  const activeStory = UserStories.stories[activeStoryIndex];
   console.log('activeStory',activeStory);
 
   return (
@@ -77,8 +73,8 @@ const StoryScreen = ({route}) => {
         <BackImg source={activeStory.image}>
 
           <UserInfo>
-            <ProfilePicture uri={stories.user.image} size={34} />
-            <UserName>{stories.user.name}</UserName>
+            <ProfilePicture uri={UserStories.user.image} size={34} />
+            <UserName>{UserStories.user.name}</UserName>
             <PostedTime>{activeStory.postedTime}</PostedTime>
           </UserInfo>
 

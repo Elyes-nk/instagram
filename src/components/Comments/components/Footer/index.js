@@ -9,7 +9,6 @@ import {
     Send,
     Profile
   } from './styles';
-
 import profile from '../../../../assets/images/icons/profile.jpeg'
 
 const Footer = ({setComments, comments}) => {

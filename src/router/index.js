@@ -1,4 +1,4 @@
-import React, { useState, useEffect }from 'react';
+import React, { useContext, useState, useEffect }from 'react';
 import { createStackNavigator } from "@react-navigation/stack";
 
 import bottomHomeNavigator from './bottomHomeNavigator.routes';
@@ -8,41 +8,34 @@ import LoginScreen from "../screens/LoginScreen";
 import CreateScreen from "../screens/CreateScreen";
 import ValidateStoryScreen from '../screens/ValidateStoryScreen'
 import ValidatePostScreen from '../screens/ValidatePostScreen'
-
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
-
-const RootStack = createStackNavigator();
+import { Context } from "../context/Context";
+import styled from 'styled-components'
 
 const Router = () => { 
-  const [isConnected, setIsConnected] = useState(true);
-
-  const handleCheckToken = async() => {
-    try{
-        let Token = await AsyncStorage.getItem('token')
-        if (Token !== null) {
-          setIsConnected(true)
-        }
-      }catch(err){
-        console.log(err);
-      }
-    }
+  const { isConnected } = useContext(Context);
+  const RootStack = createStackNavigator();
+  const [isLoading, setisLoading] = useState(true);
 
   useEffect(() => {
-    handleCheckToken()
+   setTimeout(()=> {
+    setisLoading(false)
+   }, 1000)
   }, []);
 
+  if(isLoading){
+    return(
+      <Container>
+        <MainLogo
+          source={require('../assets/images/mainlogo.png')}
+        />
+      </Container>
+    )
+  }
 
   return(
   <RootStack.Navigator>
-     {/* <RootStack.Screen
-      name={"Login"}
-      component={LoginScreen}
-      options={{
-        headerShown: false
-      }}
-    /> */}
-    {isConnected && 
+     
+    {isConnected ? 
     <>
       <RootStack.Screen
         name={"Home"}
@@ -87,9 +80,27 @@ const Router = () => {
         }}
       />
     </>
+    :
+    <RootStack.Screen
+      name={"Login"}
+      component={LoginScreen}
+      options={{
+        headerShown: false
+      }}
+    />
     }
   </RootStack.Navigator>
 );
 }
+
+const Container = styled.View`
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+  `
+const MainLogo = styled.Image`
+    height: 70px;
+    width: 70px;
+`
 
 export default Router;

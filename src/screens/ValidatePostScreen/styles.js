@@ -16,7 +16,7 @@ export const HeaderContainer = styled.View`
     align-items: center;
     padding: 10px;
     background-color: white;
-    height: 6%;
+    height: 55px;
 `
 export const Left = styled.View`
     flex-direction: row;
@@ -38,7 +38,7 @@ export const BottomContainer = styled.View`
     background-color: white;
     border-color: lightgray;
     border-bottom-width: 1px;
-    height: 6%;
+    height: 55px;
 `
 export const IconsContainer = styled.View`
     flex-direction: row;

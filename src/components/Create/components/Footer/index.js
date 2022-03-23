@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import { RNCamera } from 'react-native-camera';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
 import {
   TextContainer, 
   TextMessage, 
@@ -10,7 +9,6 @@ import {
   IconsContainer,
   TextMessageSelected
 } from './styles';
-
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 function Footer({captureHandle, cameraFlip, setCameraFlip, isPostSelected, setIsPostSelected}) {

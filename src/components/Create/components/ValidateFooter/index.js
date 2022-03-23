@@ -11,8 +11,9 @@ import {
     Profile
 } from './styles';
 import profile from '../../../../assets/images/icons/profile.jpeg'
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
-function ValidateFooter() {
+function ValidateFooter({handleCreateStory}) {
   return (
     <BottomContainer>
         <IconsContainer>                  
@@ -26,11 +27,11 @@ function ValidateFooter() {
                 </Star>
                 <TextMessage>Close freinds</TextMessage>                          
             </TextContainer>
-        
             <Icon>
-                <AntDesign name="right" size={20} color={"black"}/>
+                <TouchableWithoutFeedback onPress={handleCreateStory}>
+                    <AntDesign name="right" size={20} color={"black"}/>
+                </TouchableWithoutFeedback>
             </Icon>
-            
         </IconsContainer>
     </BottomContainer>
   )

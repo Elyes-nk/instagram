@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Post from "../Post";
 import Stories from "../Stories";
-import posts from '../../data/posts'
 import { WhiteFlatList } from './styles';
+import { Context } from "../../context/Context";
 
 const Feed = () => {
+
+  const { posts } = useContext(Context);
+
   return (
     <WhiteFlatList
       data={posts}

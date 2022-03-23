@@ -3,7 +3,6 @@ import { Keyboard } from 'react-native';
 import styled from 'styled-components';
 import Comment from '../../../Comment';
 
-
 const Body = ({comments}) => {
 
   const [isKeyboardVisible, setKeyboardVisible] = useState(false);

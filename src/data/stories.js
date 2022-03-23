@@ -9,21 +9,17 @@ export default [
       {
         image : require("../assets/images/433/s1.jpeg"),
         postedTime: '2 m',
-      }
-    ]
-  }, {
-    user: {
-      id: '2',
-      image : require("../assets/images/lol/p1.jpeg"),
-      name : "saveta-mobile-academie",
-    },
-    stories: [
+      },
       {
-        image : require("../assets/images/lol/s1.jpeg"),
-        postedTime: '9 m',
+        image : require("../assets/images/433/s2.jpeg"),
+        postedTime: '10 m',
+      },
+      {
+        image : require("../assets/images/433/s3.jpeg"),
+        postedTime: '12 m',
       }
     ]
-  }, {
+  },  {
     user: {
       id: '1',
       image : require("../assets/images/swann/p1.jpeg"),
@@ -79,6 +75,18 @@ export default [
         image : require("../assets/images/brfoot/s1.jpeg"),
         postedTime: '15 m',
       },
+    ]
+  },{
+    user: {
+      id: '2',
+      image : require("../assets/images/lol/p1.jpeg"),
+      name : "saveta-mobile-academie",
+    },
+    stories: [
+      {
+        image : require("../assets/images/lol/s1.jpeg"),
+        postedTime: '9 m',
+      }
     ]
   },
 ]
