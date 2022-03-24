@@ -1,26 +1,23 @@
 import React from 'react';
 import { TouchableWithoutFeedback } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
-    
-    import {
-      Container,
-      LeftIcons, 
-      IconsContainerImg, 
-      Likes, 
-      Caption, 
-      PostedAt,
-      Comments,
-      Heart,
-      Save,
-      Chat
-    } from "./styles";
-
-  import heart from '../../../../assets/images/icons/heart.png'
-  import hearto from '../../../../assets/images/icons/hearto.png'
-  import chat from '../../../../assets/images/icons/chat.png'
-  import send from '../../../../assets/images/icons/send.png'
-  import save from '../../../../assets/images/icons/save.png'
+import {
+  Container,
+  LeftIcons, 
+  IconsContainerImg, 
+  Likes, 
+  Caption, 
+  PostedAt,
+  Comments,
+  Heart,
+  Save,
+  Chat
+} from "./styles";
+import heart from '../../../../assets/images/icons/heart.png'
+import hearto from '../../../../assets/images/icons/hearto.png'
+import chat from '../../../../assets/images/icons/chat.png'
+import send from '../../../../assets/images/icons/send.png'
+import save from '../../../../assets/images/icons/save.png'
 
 
 
@@ -62,7 +59,9 @@ const Footer = ({likesCount, id, caption, postedAt, isLiked, comments, onLikePre
           <TouchableWithoutFeedback onPress={() => navigation.navigate("Comments", {postId: id})}>
               <Chat source={chat} />
           </TouchableWithoutFeedback>
-          <Save source={send} />
+          <TouchableWithoutFeedback onPress={() => navigation.navigate("Share")}>
+            <Save source={send} />
+          </TouchableWithoutFeedback>
         </LeftIcons>
         <Save source={save} />
       </IconsContainerImg>

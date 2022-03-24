@@ -27,7 +27,7 @@ export default function NewPost({isPostSelected, setIsPostSelected}) {
                 console.log(response.error);
             }else{
                 const filePath = response.assets[0].uri;
-                const newFilePath = RNFS.ExternalDirectoryPath + '/NewPost.jpg';
+                const newFilePath = RNFS.ExternalDirectoryPath + '/'+ uuid.v4() +'.jpg';
                 RNFS.moveFile(filePath, newFilePath).catch(error => { console.log(error); })
                 navigation.navigate("ValidatePost", { path : newFilePath})
             }

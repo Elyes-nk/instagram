@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {
   ActivityIndicator,
   TouchableWithoutFeedback,
@@ -21,16 +21,34 @@ import {
   } from './styles';
 import { Context } from '../../context/Context'
 import ProfilePicture from "../../components/ProfilePicture";
+import { useNavigation } from '@react-navigation/native';
 
 const StoryScreen = ({route}) => {
 
   const [activeStoryIndex, setActiveStoryIndex] = useState(0);
   const  { params : {userId} } = route;
   const { stories } = useContext(Context);
+  const [nextUser, setNextUser] = useState(null);
+  const navigation = useNavigation();
 
   //GET UserStories from selected user
   const UserStories = stories.find(item => item.user.id === userId);
 
+
+  //FUNCTION TO CHANGE STORY FROM USER TO ANOTHER
+  const NextUser = (direction) => {
+    let index = stories.indexOf(UserStories)
+    
+    if(direction === "prev"){
+      setNextUser(stories[parseInt(index) - 1]?.user.id ? stories[parseInt(index) - 1].user.id : null )
+    }
+    if(direction === "next"){
+      setNextUser(stories[parseInt(index) + 1]?.user.id ? stories[parseInt(index) + 1].user.id : null )
+    }
+    return;
+  }
+
+  //FUNCTION TO CHANGE STORIES
   const handleNextStory = () => {
     if (activeStoryIndex >= UserStories?.stories.length - 1) {
       return;
@@ -64,18 +82,17 @@ const StoryScreen = ({route}) => {
     )
   }
 
-  const activeStory = UserStories.stories[activeStoryIndex];
-  console.log('activeStory',activeStory);
+  const activeStory = UserStories.stories[activeStoryIndex]
 
   return (
     <Container>
       <TouchableWithoutFeedback onPress={handlePress}>
-        <BackImg source={activeStory.image}>
+        <BackImg source={activeStory?.image}>
 
           <UserInfo>
             <ProfilePicture uri={UserStories.user.image} size={34} />
             <UserName>{UserStories.user.name}</UserName>
-            <PostedTime>{activeStory.postedTime}</PostedTime>
+            <PostedTime>{activeStory?.postedTime}</PostedTime>
           </UserInfo>
 
           <BottomContainer>

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const NotificationsScreen = () => (
+const ShareScreen = () => (
   <Container>
     <Title>Notifications</Title>
   </Container>
@@ -19,4 +19,4 @@ const Title = styled.Text`
     margin: 20px;
 `
 
-export default NotificationsScreen;
+export default ShareScreen;

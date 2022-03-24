@@ -16,11 +16,13 @@ import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 function ValidateFooter({handleCreateStory}) {
   return (
     <BottomContainer>
-        <IconsContainer>                  
+        <IconsContainer>  
             <TextContainer>    
                 <Profile source={profile}/>
-                <TextMessage>Your stories</TextMessage>                              
-            </TextContainer>                      
+                <TouchableWithoutFeedback onPress={handleCreateStory}>
+                    <TextMessage>Your stories</TextMessage>     
+                </TouchableWithoutFeedback>
+            </TextContainer>
             <TextContainer> 
                 <Star>
                     <Entypo name="star" size={15} color={"white"}/>

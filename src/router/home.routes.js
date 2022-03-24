@@ -1,7 +1,7 @@
 import React from 'react';
 import {Image, View ,Text} from "react-native";
 import {createStackNavigator} from "@react-navigation/stack";
-
+import styled from 'styled-components'
 import HomeScreen from "../screens/HomeScreen";
 import logo from "../assets/images/logo.png";
 import messenger from "../assets/images/icons/messenger.png"
@@ -31,7 +31,7 @@ const HomeRoutes = () => {
         },
         headerTitle: () => (<Text></Text>),
         headerLeft: () => (
-          <Image source={logo} resizeMode="contain" style={{width: 123, height: 45}}/>
+          <Logo source={logo} resizeMode="contain" />
         ),
         headerRight: () => (
           <View style={{
@@ -39,10 +39,14 @@ const HomeRoutes = () => {
             justifyContent: 'space-between',
           }}>
             <TouchableWithoutFeedback onPress={() => navigation.navigate("Create")}>
-              <Image style={{width:24, marginTop:10, marginRight:20, height:24}} source={plus} />
+              <Plus source={plus} />
             </TouchableWithoutFeedback>
-            <Image style={{width:24, marginTop:10,marginRight:20, height:24}} source={heart} />
-            <Image style={{width:24, marginTop:10, height:24}} source={messenger} />
+            <TouchableWithoutFeedback onPress={() => navigation.navigate("Notifications")}>
+              <Heart source={heart} />
+            </TouchableWithoutFeedback>
+            <TouchableWithoutFeedback onPress={() => navigation.navigate("Messenger")}>
+              <Messenger source={messenger} />
+            </TouchableWithoutFeedback>
           </View>
         )
       }}
@@ -50,4 +54,29 @@ const HomeRoutes = () => {
   </HomeStack.Navigator>
 )
 }
+
+const Logo = styled.Image`
+  width: 123px;
+  height: 45px;
+`
+
+const Plus = styled.Image`
+  width:24px;
+  margin-top:10px;
+  margin-right:20px;
+  height:24px;
+`
+const Heart = styled.Image`
+  width:24px;
+  margin-top:10px;
+  margin-right:20px;
+  height:24px;
+`
+
+const Messenger = styled.Image`
+width:24px;
+margin-top:10px;
+height:24px;
+`
+
 export default HomeRoutes;

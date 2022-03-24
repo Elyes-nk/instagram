@@ -7,6 +7,7 @@ import { RNCamera } from 'react-native-camera';
 import { useCamera } from 'react-native-camera-hooks';
 import RNFS from 'react-native-fs';
 import Footer from '../Footer';
+import uuid from 'react-native-uuid';
 
 export default function NewStory({isPostSelected, setIsPostSelected}) {
 
@@ -18,14 +19,14 @@ export default function NewStory({isPostSelected, setIsPostSelected}) {
         try {
             const data = await takePicture();
             const filePath = data.uri;
-            const newFilePath = RNFS.ExternalDirectoryPath + '/NewStory.jpg';
+            const newFilePath = RNFS.ExternalDirectoryPath + "/" + uuid.v4() + ".jpg";
             RNFS.moveFile(filePath, newFilePath).catch(error => { console.log(error);})
             navigation.navigate("ValidateStory", { path : newFilePath})
         } catch (error) {
             console.log(error);
         }
     }
-
+    
     return (
         <Container>
             <RNCamera

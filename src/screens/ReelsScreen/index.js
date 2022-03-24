@@ -1,10 +1,23 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import styled from 'styled-components';
 
 const ReelsScreen = () => (
-  <View style={{backgroundColor: "black", height: 1500}}>
-    <Text style={{textAlign: 'center', marginTop: 300, fontSize: 30, color: 'white'}}>Reels</Text>
-  </View>
+  <Container>
+    <Title>Reels</Title>
+  </Container>
 )
+
+const Container = styled.View`
+    flex:1;
+    justify-content:center;
+    align-items: center;
+    background-color: black;
+`
+const Title = styled.Text`
+    font-size: 30px;
+    color: white;
+    margin: 20px;
+`
+
 
 export default ReelsScreen;

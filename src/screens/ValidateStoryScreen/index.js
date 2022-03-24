@@ -1,4 +1,4 @@
-import React, { useState, useContext }  from 'react';
+import React, { useState, useEffect, useContext }  from 'react';
 import {
     Container,  
     Img
@@ -12,9 +12,13 @@ import profile from '../../assets/images/icons/profile.jpeg';
 const ValidateStoryScreen = ({route}) => {
 
     const  { params : {path} } = route;
-    const [image, setImage] = useState(`${Platform.OS === "android" ? 'file://' : ''}${path}`);
+    const [image, setImage] = useState();
     const navigation = useNavigation();
     const { stories, setStories } = useContext(Context);
+
+    useEffect(() => {
+        setImage(`${Platform.OS === "android" ? 'file://' : ''}${path}`)
+    }, []);
 
     //FUNCTION CREATE Story
     const handleCreateStory = () => {
@@ -48,7 +52,7 @@ const ValidateStoryScreen = ({route}) => {
                 source={{uri : `${Platform.OS === "android" ? 'file://' : ''}${path}`}}
             />
             <ValidateFooter 
-                handleCreateStory={handleCreateStory}
+                handleCreateStory={handleCreateStory}s
             />
         </Container>  
     </SafeAreaView>

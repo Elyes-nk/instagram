@@ -10,6 +10,9 @@ import ValidateStoryScreen from '../screens/ValidateStoryScreen'
 import ValidatePostScreen from '../screens/ValidatePostScreen'
 import { Context } from "../context/Context";
 import styled from 'styled-components'
+import MessengerScreen from '../screens/MessengerScreen';
+import NotificationsScreen from '../screens/NotificationsScreen';
+import ShareScreen from '../screens/ShareScreen';
 
 const Router = () => { 
   const { isConnected } = useContext(Context);
@@ -75,6 +78,27 @@ const Router = () => {
        <RootStack.Screen
         name="ValidatePost"
         component={ValidatePostScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <RootStack.Screen
+        name="Messenger"
+        component={MessengerScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+       <RootStack.Screen
+        name="Notifications"
+        component={NotificationsScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <RootStack.Screen
+        name="Share"
+        component={ShareScreen}
         options={{
           headerShown: false,
         }}

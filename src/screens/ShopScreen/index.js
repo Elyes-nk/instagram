@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const NotificationsScreen = () => (
+const ShopScreen = () => (
   <Container>
-    <Title>Notifications</Title>
+    <Title>Shop</Title>
   </Container>
 )
 
@@ -19,4 +19,4 @@ const Title = styled.Text`
     margin: 20px;
 `
 
-export default NotificationsScreen;
+export default ShopScreen;

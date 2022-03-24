@@ -28,8 +28,14 @@ const ValidateStoryScreen = ({route}) => {
   const  { params : {path} } = route;
   const navigation = useNavigation();
   const { posts, setPosts } = useContext(Context);
-  const [image, setImage] = useState(`${Platform.OS === "android" ? 'file://' : ''}${path}`);
+  const [image, setImage] = useState(null);
   const [caption, setCaption] = useState("");
+
+
+  useEffect(() => {
+    setImage(`${Platform.OS === "android" ? 'file://' : ''}${path}`)
+  }, []);
+
 
   //FUNCTION TO HIDE SOME ELEMENTS AFTER KEYBOARD APEAR
   const [isKeyboardVisible, setKeyboardVisible] = useState(false);
@@ -94,6 +100,7 @@ const ValidateStoryScreen = ({route}) => {
           <Img 
               source={{uri : `${Platform.OS === "android" ? 'file://' : ''}${path}`}}
               resizeMode='cover'
+              reload
           />
           <BottomContainer>
             <IconsContainer>

@@ -32,7 +32,6 @@ export const ContextProvider = ({ children }) => {
   const handleCheckToken = async() => {
     try{
       const tkn = await AsyncStorage.getItem('token')
-      console.log(tkn);
       if(tkn){
         setIsConnected(true)
       }

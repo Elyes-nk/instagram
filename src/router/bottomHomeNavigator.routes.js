@@ -6,7 +6,7 @@ import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import HomeStackScreen from './home.routes';
 import DiscoveryScreen from "../screens/DiscoveryScreen";
 import ReelsScreen from "../screens/ReelsScreen";
-import NotificationsScreen from "../screens/NotificationsScreen";
+import ShopScreen from "../screens/ShopScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 
 import reels from '../assets/images/icons/reels.png'
@@ -69,7 +69,7 @@ const BottomHomeNavigator = () => (
     />
     <Tab.Screen 
       name="Shop" 
-      component={NotificationsScreen} 
+      component={ShopScreen} 
       options={{
         headerShown: false
       }}
