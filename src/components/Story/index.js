@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import ProfilePicture from "../ProfilePicture";
 import {Container, TextName} from './styles';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 
 const Story = (props) => {
@@ -31,8 +32,10 @@ const Story = (props) => {
   }
 
   return (
-    <Container onPress={onPress}>
-      <ProfilePicture uri={image}/>
+    <Container >
+      <TouchableWithoutFeedback onPress={onPress}> 
+        <ProfilePicture uri={image}/>
+      </TouchableWithoutFeedback>
       <TextName>{username}</TextName>
     </Container>
   )
