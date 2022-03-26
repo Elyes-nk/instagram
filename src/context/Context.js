@@ -4,7 +4,7 @@ import storiesData from '../data/stories';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const INITIAL_STATE = {
-  token: null,
+  isConnected: false,
   stories: [],
   posts: []
 };

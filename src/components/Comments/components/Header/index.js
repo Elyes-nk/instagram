@@ -6,7 +6,9 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import { useNavigation } from '@react-navigation/native';
 
 const Header = () =>{ 
+  
   const navigation = useNavigation()
+
   return(
     <Container>
       <Left>
@@ -15,7 +17,6 @@ const Header = () =>{
         </TouchableWithoutFeedback>
         <Name>Comments</Name>
       </Left>
-
       <Right>
         <Send source={send} />
       </Right>

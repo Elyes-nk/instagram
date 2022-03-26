@@ -44,7 +44,6 @@ const Comment = ({comment}) => {
                 <Small> {comment?.createdAt}</Small>
                 <Small> {likesCount} likes</Small>
                 <Small> Reply </Small>
-
             </ReactionContainer>
         </CommentContainer>
       </ContainerTwo>
@@ -55,7 +54,6 @@ const Comment = ({comment}) => {
               <Heart source={heart} />
             }
       </TouchableWithoutFeedback>
-
     </Container>
   )
 }

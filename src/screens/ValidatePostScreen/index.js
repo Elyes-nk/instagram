@@ -31,14 +31,12 @@ const ValidateStoryScreen = ({route}) => {
   const [image, setImage] = useState(null);
   const [caption, setCaption] = useState("");
 
-
   useEffect(() => {
     setImage(`${Platform.OS === "android" ? 'file://' : ''}${path}`)
   }, []);
 
-
-  //FUNCTION TO HIDE SOME ELEMENTS AFTER KEYBOARD APEAR
   const [isKeyboardVisible, setKeyboardVisible] = useState(false);
+
   useEffect(() => {
     const keyboardDidShowListener = Keyboard.addListener('keyboardDidShow',
       () => { setKeyboardVisible(true); },
@@ -53,8 +51,6 @@ const ValidateStoryScreen = ({route}) => {
     };
   }, []);
 
-
-  //FUNCTION CREATE POST
   const handleCreatePost = () => {
     if (image) {
       let newArray = posts;
@@ -89,14 +85,12 @@ const ValidateStoryScreen = ({route}) => {
               </TouchableWithoutFeedback>
               <Name>New Post</Name>
             </Left>
-
             <Right>
               <TouchableWithoutFeedback onPress={() => handleCreatePost()}>
                 <AntDesign name='check' size={30} style={{color:'#0095f6'}} />
               </TouchableWithoutFeedback>
             </Right>
           </HeaderContainer>
-
           <Img 
               source={{uri : `${Platform.OS === "android" ? 'file://' : ''}${path}`}}
               resizeMode='cover'
@@ -115,7 +109,6 @@ const ValidateStoryScreen = ({route}) => {
                   onChangeText={txt => setCaption(txt)}
                 />
               </TextInputContainer>
-          
             </IconsContainer>
           </BottomContainer>
           {!isKeyboardVisible &&

@@ -9,7 +9,6 @@ const Header = ({imageUri, name}) => (
       <ProfilePicture uri={imageUri} size={32} />
       <Name>{name}</Name>
     </Left>
-
     <Right>
       <Icon name="dots-three-vertical" size={16} />
     </Right>

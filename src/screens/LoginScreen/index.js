@@ -1,9 +1,9 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { 
-        Text, 
-        Alert,
-        TouchableWithoutFeedback,
-        ActivityIndicator
+    Text, 
+    Alert,
+    TouchableWithoutFeedback,
+    ActivityIndicator
      } from 'react-native'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import {

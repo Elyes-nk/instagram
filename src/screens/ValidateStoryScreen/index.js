@@ -25,18 +25,18 @@ const ValidateStoryScreen = ({route}) => {
         if (image) {
         let newArray = stories;
         newArray.unshift(
-            {
-                stories: [
-                    {
-                      image : {uri : image},
-                      postedTime: '2 s',
-                    }
-                  ],
-                user: {
-                    id : 10,
-                    name : "elyes-nk",
-                    image : profile,
-                },
+        {
+            stories: [
+                {
+                    image : {uri : image},
+                    postedTime: '2 s',
+                }
+                ],
+            user: {
+                id : 10,
+                name : "elyes-nk",
+                image : profile,
+            },
         }
         );
         setStories(newArray);

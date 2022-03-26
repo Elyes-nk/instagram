@@ -22,23 +22,23 @@ const Post = ({ post }) =>{
   }, [])
   
   return(
-  <View>
-    <Header imageUri={post.user.image} name={post.user.name} />
-    <Body 
-      imageUri={post.image}
-      onLikePressed={onLikePressed}
-    />
-    <Footer
-      likesCount={likesCount}
-      onLikePressed={onLikePressed}
-      isLiked={isLiked}
-      caption={post.caption}
-      postedAt={post.createdAt}
-      comments={post.comments}
-      name={post.user.name} 
-      id={post.id}
-    />
-  </View>
+    <View>
+      <Header imageUri={post.user.image} name={post.user.name} />
+      <Body 
+        imageUri={post.image}
+        onLikePressed={onLikePressed}
+      />
+      <Footer
+        likesCount={likesCount}
+        onLikePressed={onLikePressed}
+        isLiked={isLiked}
+        caption={post.caption}
+        postedAt={post.createdAt}
+        comments={post.comments}
+        name={post.user.name} 
+        id={post.id}
+      />
+    </View>
 )}
 
 export default Post;

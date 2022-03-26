@@ -36,28 +36,27 @@ const Footer = ({setComments, comments}) => {
    }
   }
   return (
-          <BottomContainer>
-            <IconsContainer>
-              <Ellement>
-                <Profile source={profile} />
-              </Ellement>
-              <TextInputContainer>
-                <TextInput
-                  editable
-                  placeholder="Add a comment..."
-                  placeholderTextColor={"lightgray"}
-                  onChangeText={txt => setComment(txt)}
-                  value={comment}
-                />
-              </TextInputContainer>
-          
-              <Ellement>
-                <Send 
-                  onPress={() => handleSubmit()}
-                >Post</Send>
-              </Ellement>
-            </IconsContainer>
-          </BottomContainer>
+    <BottomContainer>
+      <IconsContainer>
+        <Ellement>
+          <Profile source={profile} />
+        </Ellement>
+        <TextInputContainer>
+          <TextInput
+            editable
+            placeholder="Add a comment..."
+            placeholderTextColor={"lightgray"}
+            onChangeText={txt => setComment(txt)}
+            value={comment}
+          />
+        </TextInputContainer>
+        <Ellement>
+          <Send 
+            onPress={() => handleSubmit()}
+          >Post</Send>
+        </Ellement>
+      </IconsContainer>
+    </BottomContainer>
   )
 }
 

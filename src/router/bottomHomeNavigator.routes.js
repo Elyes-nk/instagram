@@ -1,19 +1,15 @@
 import React from 'react';
 import {Image} from 'react-native'
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-
-
 import HomeStackScreen from './home.routes';
 import DiscoveryScreen from "../screens/DiscoveryScreen";
 import ReelsScreen from "../screens/ReelsScreen";
 import ShopScreen from "../screens/ShopScreen";
 import ProfileScreen from "../screens/ProfileScreen";
-
 import reels from '../assets/images/icons/reels.png'
 import home from '../assets/images/icons/home.png'
 import search from '../assets/images/icons/search.png'
 import bag from '../assets/images/icons/bag.png'
-
 import profile from '../assets/images/icons/profile.jpeg'
 
 

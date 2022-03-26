@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect }from 'react';
 import { createStackNavigator } from "@react-navigation/stack";
-
 import bottomHomeNavigator from './bottomHomeNavigator.routes';
 import StoryScreen from "../screens/StoryScreen";
 import CommentsScreen from "../screens/CommentsScreen";

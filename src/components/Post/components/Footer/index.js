@@ -19,10 +19,6 @@ import chat from '../../../../assets/images/icons/chat.png'
 import send from '../../../../assets/images/icons/send.png'
 import save from '../../../../assets/images/icons/save.png'
 
-
-
-
-
 const Footer = ({likesCount, id, caption, postedAt, isLiked, comments, onLikePressed}) => {
 
   const navigation = useNavigation();
@@ -46,7 +42,6 @@ const Footer = ({likesCount, id, caption, postedAt, isLiked, comments, onLikePre
 
   return (
     <Container>
-
       <IconsContainerImg>
         <LeftIcons>
           <TouchableWithoutFeedback onPress={onLikePressed}>
@@ -65,7 +60,6 @@ const Footer = ({likesCount, id, caption, postedAt, isLiked, comments, onLikePre
         </LeftIcons>
         <Save source={save} />
       </IconsContainerImg>
-
       <Likes>{likes} Likes</Likes>
       <Caption>{caption}</Caption>
       <TouchableWithoutFeedback onPress={() => navigation.navigate("Comments", {postId: id})}>
