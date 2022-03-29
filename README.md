@@ -3,14 +3,18 @@
 </h1>
 
 # 📷  Instagram-Clone Front
-*Front end part of the best photo app in the world.*
+*Front end of my instagram clone.*
+*ANDROID only.*
 
 ## Project content
 - Login
 - Home
 - Stories
+- Add story
 - Posts
+- Add post
 - Comments
+- Add comment
 
 # Project structure
 
@@ -35,7 +39,3 @@
 ├──  _app.js
 └──  package.json
 ```
-
-## :stars: Show your support
-
-Please give a :star: if this project helped you !
