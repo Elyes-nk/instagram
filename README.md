@@ -6,6 +6,10 @@
 *Front end of my instagram clone.*
 *ANDROID only.*
 
+## Logs
+- Username: elyes
+- Password: elyes
+
 ## Project content
 - Login
 - Home
